@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th colspan="2"></th>
   </tr>
  
   <% @todos.each do |todo| %>
@@ -11,6 +12,7 @@
       <td><%= todo.name %></td>
       <td><%= todo.description %></td>
       <td><%= link_to 'Show', todo_path(todo) %></td>
+      <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
     </tr>
   <% end %>
 </table>
