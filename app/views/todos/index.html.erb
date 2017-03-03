@@ -1,0 +1,16 @@
+<h1>List of todos</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+ 
+  <% @todos.each do |todo| %>
+    <tr>
+      <td><%= todo.name %></td>
+      <td><%= todo.description %></td>
+      <td><%= link_to 'Show', todo_path(todo) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,15 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<h1>Showing a todo</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @todo.name %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @todo.description %>
+</p>
