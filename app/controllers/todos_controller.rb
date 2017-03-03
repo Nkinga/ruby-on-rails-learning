@@ -27,9 +27,15 @@ class TodosController < ApplicationController
   end
  
   def update
-    @todo = current_account.todos.find(params[:id])
-    @todo.update!(todo_params)
-    redirect_to @todo
+    @todo = Todo.find(params[:id])
+    
+    if @todo.update!(todo_params)
+      flash[:notice] = "Todo was successfully updated"
+      redirect_to @todo
+    else
+      render 'edit'
+    end
+    
   end
   
   private
