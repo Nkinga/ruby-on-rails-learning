@@ -1,15 +1,26 @@
-
-<h1>Showing a todo</h1>
-
-<p>
-  <strong>Name:</strong>
-  <%= @todo.name %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @todo.description %>
-</p>
-
-<%= link_to 'Edit todo', edit_todo_path(@todo) %> |
-<%= link_to "Back to listing", todos_path %>
+<div class="container">
+  <div class="header">
+    <h1>Showing a todo</h1>
+  </div>
+  
+  <hr>
+  
+  <div class="main">
+    <p>
+      <strong>Name:</strong>
+      <%= @todo.name %>
+    </p>
+     
+     <hr>
+     
+    <p>
+      <strong>Description:</strong>
+      <%= @todo.description %>
+    </p>
+  </div>
+  
+  <div class="link">
+    <%= link_to 'Edit todo', edit_todo_path(@todo), class: "manage-todo" %> |
+    <%= link_to "Back to listing", todos_path , class: "manage-todo"%>
+  </div>
+</div>

@@ -1,14 +1,17 @@
 <% if @todo.errors.any? %>
-  <h2>The following errors prevented the todo from being saved</h2>
-  <ul>
-    <% @todo.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+  <div class="errors">
+    <h2 >The following errors prevented the todo from being saved</h2>
+    <ul>
+      <% @todo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 
-
+<div class="form">
+  
 <%= form_for @todo do |f| %>
   
   <p>
@@ -27,4 +30,6 @@
 
 <% end %>
 
-<%= link_to 'Back to listing', todos_path %>
+</div>
+
+<%= link_to 'Back to listing', todos_path, class: "button" %>
