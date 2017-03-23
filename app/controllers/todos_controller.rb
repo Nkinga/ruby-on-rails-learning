@@ -42,9 +42,6 @@ class TodosController < ApplicationController
     else
       render 'edit'
     end
-    
-    
-    
   end
   
   private

@@ -1,0 +1,36 @@
+<% if @user.errors.any? %>
+  <div class="errors">
+    <h2 >The following errors prevented the user from being saved</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<div class="form">
+  
+<%= form_for @user do |f| %>
+  
+  <p>
+  <%= f.label :name %> <br/>
+  <%= f.text_field :name, placeholder: "enter your name" %> 
+  </p>
+  
+  <p>
+  <%= f.label :email %> <br/>
+  <%= f.text_field :email, placeholder: "enter your email address" %>
+  </p>
+  
+  
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+</div>
+
+<%= link_to 'Back to user listing', users_path, class: "button" %>
